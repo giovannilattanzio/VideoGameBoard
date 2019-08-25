@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:videogame_message_board_mockup/src/models/forum.dart';
 import 'package:videogame_message_board_mockup/src/paint/forum_detail_custom_clipper.dart';
 import 'package:videogame_message_board_mockup/src/paint/forum_name_shape_border.dart';
+import 'package:videogame_message_board_mockup/src/screens/details_page.dart';
 import 'package:videogame_message_board_mockup/src/utils/theme.dart';
 import 'package:videogame_message_board_mockup/src/widgets/value_label_widget.dart';
 
@@ -15,28 +16,36 @@ class ForumCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: _cardWidth,
-      child: Card(
-        elevation: 15.0,
-        margin: EdgeInsets.symmetric(
-          horizontal: 25.0,
-          vertical: 35.0,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: _cardBorderRadius,
-        ),
-        child: ClipRRect(
-          borderRadius: _cardBorderRadius,
-          child: Stack(
-            children: <Widget>[
-              _createForumBackground(),
-              _createForumDetails(context),
-              _createForumName(context),
-            ],
+    return InkWell(
+      child: SizedBox(
+        width: _cardWidth,
+        child: Card(
+          elevation: 15.0,
+          margin: EdgeInsets.symmetric(
+            horizontal: 25.0,
+            vertical: 35.0,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: _cardBorderRadius,
+          ),
+          child: ClipRRect(
+            borderRadius: _cardBorderRadius,
+            child: Stack(
+              children: <Widget>[
+                _createForumBackground(),
+                _createForumDetails(context),
+                _createForumName(context),
+              ],
+            ),
           ),
         ),
       ),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (BuildContext context) => DetailsPage(forum)),
+        );
+      },
     );
   }
 
@@ -44,10 +53,13 @@ class ForumCard extends StatelessWidget {
     return Positioned(
       left: 0.0,
       right: 0.0,
-      child: Image.asset(
-        forum.imagePath,
-        width: _cardWidth,
-        fit: BoxFit.fitWidth,
+      child: Hero(
+        tag: forum.title,
+        child: Image.asset(
+          forum.imagePath,
+          width: _cardWidth,
+          fit: BoxFit.fitWidth,
+        ),
       ),
     );
   }

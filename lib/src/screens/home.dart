@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:videogame_message_board_mockup/src/utils/tags.dart';
 import 'package:videogame_message_board_mockup/src/utils/theme.dart';
 import 'package:videogame_message_board_mockup/src/widgets/app_background.dart';
 import 'package:videogame_message_board_mockup/src/widgets/horizontal_tab_layout.dart';
@@ -57,6 +58,7 @@ class Home extends StatelessWidget {
             height: 50.0,
             width: 50.0,
             child: FloatingActionButton(
+              heroTag: MyTags.homeFABHeroTag,
               onPressed: null,
               backgroundColor: Colors.white,
               child: Icon(

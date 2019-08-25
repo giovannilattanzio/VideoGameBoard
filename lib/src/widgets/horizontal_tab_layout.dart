@@ -40,6 +40,12 @@ class _HorizontalTabLayoutState extends State<HorizontalTabLayout>
     );
   }
 
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
   Widget _createTabs() {
     return Positioned(
       left: 15.0,

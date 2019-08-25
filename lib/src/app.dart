@@ -10,6 +10,7 @@ class App extends StatelessWidget {
           primaryColor: Color(0xFFFF9F59),
           backgroundColor: Color(0xFFE4E6F1),
           primarySwatch: Colors.orange,
+          iconTheme: IconThemeData(color: Colors.white),
         ),
         home: Home(),
       );

@@ -2,14 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:videogame_message_board_mockup/src/utils/theme.dart';
 
 class AppBackground extends StatelessWidget {
+  final Color _firstCircleColor;
+  final Color _secondCircleColor;
+  final Color _thirdCircleColor;
+
+  AppBackground({firstCircleColor, secondCircleColor, thirdCircleColor})
+      : this._firstCircleColor = firstCircleColor ?? MyTheme.whitishFirstCircleColor,
+        this._secondCircleColor =
+            secondCircleColor ?? MyTheme.whitishSecondCircleColor,
+        this._thirdCircleColor = thirdCircleColor ?? MyTheme.whitishThirdCircleColor;
+
   @override
   Widget build(BuildContext context) {
-
     /// [LayoutBuilder] ci dà lo spazio che un singolo widget può usare
     /// [Mediaquery] poteva darci lo spazio dello schermo
     return LayoutBuilder(
       builder: (context, constraint) {
-
         final _height = constraint.maxHeight;
         final _width = constraint.maxWidth;
 
@@ -30,13 +38,13 @@ class AppBackground extends StatelessWidget {
   Widget _createFirstCircle(double width, double height) {
     return Positioned(
       bottom: height * 0.25,
-      left: 0.0 - (height/2 - width/2) ,
+      left: 0.0 - (height / 2 - width / 2),
       child: Container(
         width: height,
         height: height,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: MyTheme.firstCircleColor,
+          color: this._firstCircleColor,
         ),
       ),
     );
@@ -51,7 +59,7 @@ class AppBackground extends StatelessWidget {
         height: width * 1.6,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: MyTheme.secondCircleColor,
+          color: this._secondCircleColor,
         ),
       ),
     );
@@ -66,7 +74,7 @@ class AppBackground extends StatelessWidget {
         height: width * 0.6,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: MyTheme.thirdCircleColor,
+          color: this._thirdCircleColor,
         ),
       ),
     );
