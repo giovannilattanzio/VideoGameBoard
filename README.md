@@ -1,16 +1,32 @@
-# videogame_message_board_mockup
+# Videogame Board
 
-A new Flutter project.
+Un mockup di un app di un forum sui videogame in **Flutter**.
 
-## Getting Started
+## Punti chiave
 
-This project is a starting point for a Flutter application.
+In questo progetto sono stati utilizzati:
+- Animazioni di transizione tra una schermata e l'altra, e nella visualizzazioni di elementi della stessa schermata
 
-A few resources to get you started if this is your first Flutter project:
+### Screenshot
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<table>
+  <thead style="background-color:gray; color: black">
+    <tr>
+      <th colspan="2">Android</th>
+      <th colspan="2">iOS</th>
+    </tr>
+  </thead>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/giovannilattanzio/VideoGameBoard/master/screenshots/android1.png" alt="screen1" width="200"></td>
+    <td><img src="https://raw.githubusercontent.com/giovannilattanzio/VideoGameBoard/master/screenshots/android2.png" alt="screen2" width="200"></td>
+    <td><img src="https://raw.githubusercontent.com/giovannilattanzio/VideoGameBoard/master/screenshots/ios1.png" alt="screen3" width="200"></td>
+    <td><img src="https://raw.githubusercontent.com/giovannilattanzio/VideoGameBoard/master/screenshots/ios2.png" alt="screen2" width="200"></td>
+  </tr>
+</table>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Known issues
+- Il layout della prima schermata potrebbe non adattarsi perfettamente a schermi abbastanza piccoli
+
+## Ringraziamenti
+- [Layout](https://dribbble.com/shots/6193167-Video-Game-Message-Board-App/attachments)
+- [Live coding seguito per impostare il progetto](https://www.youtube.com/watch?v=2E-n0WWooGs)
